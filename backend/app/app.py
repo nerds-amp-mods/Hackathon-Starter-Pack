@@ -6,5 +6,5 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def status() -> Tuple[Dict[str, Any], int]:
+def welcome_route() -> Tuple[Dict[str, Any], int]:
     return {"response": "Welcome to Landing Page"}, 200

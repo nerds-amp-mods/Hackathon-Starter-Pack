@@ -15,7 +15,7 @@ Further Information for specific projects given below
 
 ## Backend
 
-- Currently backend supports python 3.9
+- Currently backend supports python>=3.8.5
 - Create a virtual environment using `python -m virtualenv venv` and activate the virtual environment.
 - Open the your IDE from `backend` as your root folder.
 - Make sure you are having the latest code on your development branch, else do `git rebase origin/master`.

@@ -24,4 +24,6 @@ def lint(session) -> None:
 def test(session) -> None:
     session.install("-r", "requirements.txt")
     # TODO Add flask app start
-    session.run("pytest", "--cov-report=xml", "--cov=app/",*(session.posargs or ("tests/",)))
+    session.run(
+        "pytest", "--cov-report=xml", "--cov=app/", *(session.posargs or ("tests/",))
+    )

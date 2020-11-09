@@ -17,7 +17,7 @@ build/
 .pytest_cache/
 
 # pyenv
-.python-version
+.python-version/
 
 # Environments
 .env
@@ -31,4 +31,5 @@ venv.bak/
 .mypy_cache/
 
 # Pytest coverage files
-*.xml
+coverage.xml
+.coverage

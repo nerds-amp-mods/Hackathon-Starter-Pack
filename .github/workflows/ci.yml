@@ -17,8 +17,10 @@ jobs:
         with:
           python-version: 3.8
       - name: Install dependencies
+        working-directory: ./backend/
         run: python3.8 -m pip install nox
       - name: Lint the code
+        working-directory: ./backend/
         run: nox -s lint
 
   backend-tests:

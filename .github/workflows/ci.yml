@@ -1,0 +1,47 @@
+name: CI
+
+on: [push, pull_request]
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  backend-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        working-directory: ./backend/
+        run: python3.8 -m pip install nox
+      - name: Lint the code
+        working-directory: ./backend/
+        run: nox -s lint
+
+  backend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        working-directory: ./backend/
+        run: python3.8 -m pip install -r requirements.txt
+      - name: Run Flask Application
+        working-directory: ./backend/
+        run: |
+            export FLASK_APP=app/app.py
+            flask run &
+      - name: Run Tests
+        working-directory: ./backend/
+        run: | 
+          nox -s test-3.8
+          bash <(curl -s https://codecov.io/bash)

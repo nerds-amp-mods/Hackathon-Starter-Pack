@@ -1,0 +1,35 @@
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+dist/
+
+# Build folder
+build/
+
+# PyCharm files
+.idea/
+
+# vscode files
+.vscode/*
+
+# pytest files
+.pytest_cache/
+
+# pyenv
+.python-version/
+
+# Environments
+.env
+.venv
+.nox
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.mypy_cache/
+
+# Pytest coverage files
+coverage.xml
+.coverage

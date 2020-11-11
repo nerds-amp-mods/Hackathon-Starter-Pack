@@ -25,5 +25,9 @@ def test(session) -> None:
     session.install("-r", "requirements.txt")
     # TODO Add flask app start
     session.run(
-        "pytest", "--cov-report=xml", "--cov=app/", *(session.posargs or ("tests/",))
+        "pytest",
+        "--cov-report",
+        "term-missing",
+        "--cov=app/",
+        *(session.posargs or ("tests/",))
     )

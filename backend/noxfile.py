@@ -29,5 +29,5 @@ def test(session) -> None:
         "--cov-report",
         "term-missing",
         "--cov=app/",
-        *(session.posargs or ("tests/",))
+        *(session.posargs or ("tests/",)),
     )
